@@ -1,0 +1,19 @@
+<p>
+    <label>Distância percorrida: </label>
+    <input type="text" [(ngModel)]="distancia" />
+</p>
+<p>
+    <label>Quantidade de litros consumidos: </label>
+    <input type="text" [(ngModel)]="litros" />
+</p>
+<p> 
+    <button (click)="calcular()">Calcular</button>
+</p>
+<p *ngIf="consumo">
+    Consumo: {{ consumo }} Km/L
+    <br>
+    Classificação: 
+    <span *ngIf="(consumo > 13)">Econômico</span>
+    <span *ngIf="(consumo < 13 && consumo >= 10)">Normal</span>
+    <span *ngIf="(consumo < 10)">Gastador</span>
+</p>
